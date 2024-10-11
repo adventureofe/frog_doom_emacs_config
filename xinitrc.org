@@ -1,0 +1,45 @@
+#+title: Keyboard
+
+#+TITLE: Xinitrc
+
+* Configuration Documentation
+
+This Org file documents my configuration files.
+
+** .xinitrc Configuration
+#+BEGIN_SRC bash :tangle "~/.xinitrc"
+#!/usr/bin/env bash
+
+# Function to generate an error message
+error_message() {
+    local input="$1"
+    # Print to stderr
+    echo "ERROR: ${input} failed to execute!" >&2
+}
+
+# Takes in a script, and will print to stderr if errors occur
+handle_script() {
+    local cmd="$1"  # Command to execute
+    local cmd_name="$2"  # Name of the command for error messaging
+
+    if ! eval "$cmd"; then  # Execute the command
+        error_message "$cmd_name"  # Call the error message function
+        return 1  # Indicate failure
+    fi
+}
+
+# Set keyboard layout with toggle option
+handle_script "setxkbmap -layout 'gb,ru' -option grp:alt_shift_toggle" "setxkbmap"
+
+# Attempt to start Emacs
+if ! handle_script "emacs" "emacs"; then
+    echo "Attempting to fallback..." >&2
+
+    # Attempt to start the fallback application
+    handle_script "terminator" "fallback"
+fi
+#+END_SRC
+* org-babel-tangle
+#+BEGIN_SRC emacs-lisp
+(org-babel-tangle)
+#+END_SRC

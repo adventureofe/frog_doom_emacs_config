@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: xmodmap
+# key: xmodmap
+# --
+
+(start-process-shell-command "xmodmap" nil "xmodmap ~/.config/doom/Xmodmap")

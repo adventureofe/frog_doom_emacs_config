@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: main
+# key: main
+# --
+#+TITLE: $0
+#+AUTHOR: adventureofe
+#+STARTUP: overview
+#+OPTIONS: num:t
+#+LANGUAGE: en
+#+DESCRIPTION:
+#+KEYWORDS:
+#+CATEGORY:
