@@ -213,3 +213,17 @@
                 eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 #+END_SRC
+* open alsamixer shortcut
+#+BEGIN_SRC emacs-lisp
+(defun mixer ()
+  "Open Terminator"
+  (interactive)
+  (start-process-shell-command "terminator" nil "terminator -e alsamixer"))
+#+END_SRC
+* open firefox shortcut
+#+BEGIN_SRC emacs-lisp
+(defun firefox ()
+  "Open firefox"
+  (interactive)
+  (start-process-shell-command "firefox" nil "firefox-developer-edition"))
+#+END_SRC
