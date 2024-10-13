@@ -227,3 +227,14 @@
   (interactive)
   (start-process-shell-command "firefox" nil "firefox-developer-edition"))
 #+END_SRC
+* eshell aliases
+#+BEGIN_SRC emacs-lisp
+(with-eval-after-load 'eshell
+  (eshell/alias "ls" "ls -halt --color=auto")
+  (eshell/alias ".." "cd ..")
+  (eshell/alias "..." "cd ../..")
+  (eshell/alias "neofetch" "hyfetch")
+  (eshell/alias "firefox" "firefox-developer-edition")
+  )
+
+#+END_SRC

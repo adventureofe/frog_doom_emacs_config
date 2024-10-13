@@ -1,12 +1,7 @@
-#+title: Keyboard
+#+TITLE: xinitrc
 
-#+TITLE: Xinitrc
+.xinitrc Configuration
 
-* Configuration Documentation
-
-This Org file documents my configuration files.
-
-** .xinitrc Configuration
 #+BEGIN_SRC bash :tangle "~/.xinitrc"
 #!/usr/bin/env bash
 
@@ -39,7 +34,9 @@ if ! handle_script "emacs" "emacs"; then
     handle_script "terminator" "fallback"
 fi
 #+END_SRC
-* org-babel-tangle
+
+org babel tangle
+
 #+BEGIN_SRC emacs-lisp
 (org-babel-tangle)
 #+END_SRC

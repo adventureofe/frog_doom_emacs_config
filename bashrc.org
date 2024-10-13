@@ -1,0 +1,23 @@
+#+title: bashrc
+.bashrc config
+#+BEGIN_SRC bash :tangle "~/.bashrc"
+
+# Set up environment variables
+export EDITOR='emacs'  # or your preferred editor
+export LANG='en_US.UTF-8'
+export PATH="$HOME/bin:$PATH"  # Add your custom bin directory
+
+# Enable color support for ls and other commands
+alias ls='ls -halt --color=auto'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias firefox='firefox-developer-edition'
+alias neofetch='hyfetch'
+
+#+END_SRC
+
+org babel tangle
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-tangle)
+#+END_SRC
